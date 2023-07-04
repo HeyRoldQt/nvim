@@ -1,0 +1,6 @@
+require('user')
+require('user.toggleterm')
+require('user.nvim-tree')
+require('user.lualine')
+require('user.set')
+print('hello')
