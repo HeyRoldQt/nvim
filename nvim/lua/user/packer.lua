@@ -19,9 +19,14 @@ return require('packer').startup(function(use)
 	})
 	use("nvim-treesitter/nvim-treesitter", {run = ':TSUpdate'})
 	use('nvim-treesitter/playground')
+    use('windwp/nvim-ts-autotag')
 	use('ThePrimeagen/harpoon')
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
+    use('neovim/nvim-lspconfig')
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
+    use('onsails/lspkind-nvim')
 	use {
 	'VonHeikemen/lsp-zero.nvim',
 	branch = 'v2.x',
@@ -51,7 +56,11 @@ return require('packer').startup(function(use)
 		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 	},
     use("folke/zen-mode.nvim"),
-    use("github/copilot.vim")
+    use("github/copilot.vim"),
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 }
 }
 end)
